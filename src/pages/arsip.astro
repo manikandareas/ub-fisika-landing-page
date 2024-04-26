@@ -1,0 +1,25 @@
+---
+import type { BreadcrumbURLs } from "@/components/elements/GenerateBreadcrumb";
+import GenerateBreadcrumb from "@/components/elements/GenerateBreadcrumb";
+import Container from "@/components/ui/Container";
+import Heading from "@/components/ui/Heading";
+import Layout from "@/layouts/Layout.astro";
+
+const breadcrumbURLs: BreadcrumbURLs = [
+  {
+    name: "Home",
+    href: "/",
+  },
+  {
+    name: "Arsip",
+    href: "/arsip",
+  },
+];
+---
+
+<Layout title="Fisika Komputasi | Arsip">
+  <Container>
+    <Heading>Arsip</Heading>
+    <GenerateBreadcrumb urls={breadcrumbURLs} />
+  </Container>
+</Layout>

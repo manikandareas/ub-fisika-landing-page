@@ -1,0 +1,28 @@
+---
+import Container from "@/components/ui/Container";
+import Layout from "@/layouts/Layout.astro";
+import Heading from "@/components/ui/Heading";
+import FindEmail from "@/components/elements/FindEmail";
+import { ListsDosen } from "@/components/elements/ListDosen";
+import type { BreadcrumbURLs } from "@/components/elements/GenerateBreadcrumb";
+import GenerateBreadcrumb from "@/components/elements/GenerateBreadcrumb";
+const breadcrumbURLs: BreadcrumbURLs = [
+  {
+    name: "Home",
+    href: "/",
+  },
+  {
+    name: "Dosen",
+    href: "/profile/dosen",
+  },
+];
+---
+
+<Layout title="Fisika Komputasi | Dosen">
+  <Container>
+    <Heading>Dosen</Heading>
+    <GenerateBreadcrumb urls={breadcrumbURLs} />
+    <FindEmail />
+    <ListsDosen />
+  </Container>
+</Layout>

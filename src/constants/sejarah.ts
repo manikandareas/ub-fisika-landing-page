@@ -1,0 +1,7 @@
+export const constSejarah = {
+  description: {
+    1: "Fisika Komputasi merupakan bidang yang mengkaji masalah fisika berdasarkan hasil tinjauan komputasi numerik. Sebagai perbandingan, fisika teori melandaskan bidang kajian fisika berdasarkan analisis matematis analitik sedangkan fisika eksperimen melandaskannya pada interpretasi hasil-hasil pengukuran beberapa besaran fisis yang terkait.",
+    2: "Dengan perkembangan teknologi (khususnya komputer) batas antara fisika komputasi dan fisika teori menjadi semakin tidak nampak seiring dengan semakin tidak nampaknya perbedaan hasil yang diperoleh secara komputasi dan analitik. Ini merupakan salah satu alasan yang menyebabkan mengapa fisikawan teori dapat berperan sebagai fisikawan komputasi dan sebaliknya (contoh Feynman, Kenneth G Wilson, Steven Koonin dan sebagainya).",
+    3: "Ramalan yang secara akurat dapat diperoleh dari hasil komputasi terhadap beberapa masalah fisika menunjukkan bahwa fisika komputasi tidak lagi hanya sekedar alat visualisasi atau simulasi proses fisis agar nampak sederhana. Penghargaan Nobel Fisika untuk K.G. Wilson dalam teori fenomena kritis (critical phenomena) dan Nobel Kimia untuk Pope dalam pengembangan teori fungtional kerapatan (density functional theory) untuk molekul menunjukkan peranan fisika komputasi yang semakin mantap sebagai bentuk pendekatan ketiga, selain fisika teori dan fisika eksperimen, dalam mempelajari fisika.",
+  },
+};

@@ -1,0 +1,27 @@
+---
+import GenerateBreadcrumb, {
+    type BreadcrumbURLs,
+} from "@/components/elements/GenerateBreadcrumb";
+import Container from "@/components/ui/Container";
+import Heading from "@/components/ui/Heading";
+import Layout from "../layouts/Layout.astro";
+import NewsSection from "@/components/elements/NewsSection";
+const breadcrumbURLs: BreadcrumbURLs = [
+    {
+        name: "Home",
+        href: "/",
+    },
+    {
+        name: "News",
+        href: "/news",
+    },
+];
+---
+
+<Layout title="Fisika Komputasi | News">
+    <Container>
+        <Heading>News</Heading>
+        <GenerateBreadcrumb urls={breadcrumbURLs} />
+        <NewsSection client:load />
+    </Container>
+</Layout>

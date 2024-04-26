@@ -1,0 +1,68 @@
+---
+import Container from "@/components/ui/Container";
+import Layout from "../../layouts/Layout.astro";
+import { constSejarah } from "@/constants/sejarah";
+import BgPotrait from "public/background_potrait.webp";
+import { Image } from "astro:assets";
+import SejarahAccordion from "src/components/elements/SejarahAccordion";
+import GenerateBreadcrumb, {
+  type BreadcrumbURLs,
+} from "@/components/elements/GenerateBreadcrumb";
+import Heading from "@/components/ui/Heading";
+
+const breadcrumbURLs: BreadcrumbURLs = [
+  {
+    name: "Home",
+    href: "/",
+  },
+  {
+    name: "Sejarah",
+    href: "/profile/sejarah",
+  },
+];
+---
+
+<Layout title="Fisika Komputasi | Sejarah">
+  <Container>
+    <div class="md:grid-cols-2 md:gap-x-4 grid">
+      <div transition:name="hero-description" class="space-y-4">
+        <Heading>
+          Sejarah Fisika Komputasi <span
+            class="absolute bottom-0 right-0 w-2/3 h-1 animate-pulse bg-white"
+          ></span>
+        </Heading>
+
+        <GenerateBreadcrumb urls={breadcrumbURLs} />
+        <p data-aos="fade-left" class="mx-auto text-muted-foreground">
+          {constSejarah.description[1]}
+        </p>
+
+        <Image
+          alt={"Fisika Komputasi"}
+          src={BgPotrait}
+          class="rounded-xl border lg:hidden mx-auto"
+          format="avif"
+          loading={"lazy"}
+          transition:name="bg"
+        />
+
+        <p data-aos="fade-right" class="text-muted-foreground">
+          {constSejarah.description[2]}
+        </p>
+        <p data-aos="fade-left" class="text-muted-foreground">
+          {constSejarah.description[3]}
+        </p>
+        <SejarahAccordion client:load />
+      </div>
+      <div class="bg-yellow-500 p-5 rounded-2xl">
+        <Image
+          src={BgPotrait}
+          alt={"Fisika Komputasi"}
+          class="rounded-xl hidden lg:block"
+          transition:name="bg"
+          loading={"eager"}
+        />
+      </div>
+    </div>
+  </Container>
+</Layout>
