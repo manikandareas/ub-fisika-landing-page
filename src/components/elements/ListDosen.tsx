@@ -1,5 +1,5 @@
 import { Mail } from "lucide-react";
-import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
+import AvatarUrl from "public/avatar.jpg";
 import {
   Card,
   CardContent,
@@ -8,8 +8,6 @@ import {
   CardHeader,
   CardTitle,
 } from "../ui/card";
-import AvatarUrl from "public/avatar.jpg";
-import { Image } from "astro:assets";
 import PaginationSection from "./PaginationSection";
 type ListDosenProps = {};
 

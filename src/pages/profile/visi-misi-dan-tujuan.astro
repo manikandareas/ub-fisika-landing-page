@@ -2,7 +2,6 @@
 import Container from "@/components/ui/Container";
 import Layout from "../../layouts/Layout.astro";
 import { constSejarah } from "@/constants/sejarah";
-import BgPotrait from "public/background_potrait.webp";
 import { Image } from "astro:assets";
 import SejarahAccordion from "src/components/elements/SejarahAccordion";
 import type { BreadcrumbURLs } from "@/components/elements/GenerateBreadcrumb";
@@ -17,13 +16,22 @@ const breadcrumbURLs: BreadcrumbURLs = [
     href: "/profile/visi-misi-dan-tujuan",
   },
 ];
+
+const images = import.meta.glob<{ default: ImageMetadata }>(
+  "/public/background_potrait.webp"
+);
+
+if (!images["/public/background_potrait.webp"])
+  throw new Error(
+    `"public/background_potrait.webp" does not exist in glob: "src/assets/*.{jpeg,jpg,png,gif}"`
+  );
 ---
 
 <Layout title="Fisika Komputasi | Visi Misi & Tujuan">
   <Container>
     <div class="md:grid-cols-2 md:gap-x-4 grid">
       <Image
-        src={BgPotrait}
+        src={images["/public/background_potrait.webp"]()}
         alt={"Fisika Komputasi"}
         class="rounded-xl border hidden lg:block"
         transition:name="bg"
@@ -35,7 +43,7 @@ const breadcrumbURLs: BreadcrumbURLs = [
         <p class="text-muted-foreground">{constSejarah.description[1]}</p>
         <Image
           alt={"Fisika Komputasi"}
-          src={BgPotrait}
+          src={images["/public/background_potrait.webp"]()}
           format="avif"
           class="rounded-xl border lg:hidden"
           transition:name="bg"

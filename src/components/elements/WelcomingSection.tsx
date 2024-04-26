@@ -1,8 +1,8 @@
 import { cn } from "@/lib/utils";
-import { Instagram, Mail } from "lucide-react";
-import { buttonVariants } from "../ui/button";
-import React from "react";
 import { IconBrandInstagram } from "@tabler/icons-react";
+import { Mail } from "lucide-react";
+import React from "react";
+import { buttonVariants } from "../ui/button";
 
 type WelcomingSectionProps = {};
 

@@ -2,7 +2,7 @@
 import Container from "@/components/ui/Container";
 import Layout from "../../layouts/Layout.astro";
 import { constSejarah } from "@/constants/sejarah";
-import BgPotrait from "public/background_potrait.webp";
+
 import { Image } from "astro:assets";
 import SejarahAccordion from "src/components/elements/SejarahAccordion";
 import GenerateBreadcrumb, {
@@ -20,6 +20,15 @@ const breadcrumbURLs: BreadcrumbURLs = [
     href: "/profile/sejarah",
   },
 ];
+
+const images = import.meta.glob<{ default: ImageMetadata }>(
+  "/public/background_potrait.webp"
+);
+
+if (!images["/public/background_potrait.webp"])
+  throw new Error(
+    `"public/background_potrait.webp" does not exist in glob: "src/assets/*.{jpeg,jpg,png,gif}"`
+  );
 ---
 
 <Layout title="Fisika Komputasi | Sejarah">
@@ -39,7 +48,7 @@ const breadcrumbURLs: BreadcrumbURLs = [
 
         <Image
           alt={"Fisika Komputasi"}
-          src={BgPotrait}
+          src={images["/public/background_potrait.webp"]()}
           class="rounded-xl border lg:hidden mx-auto"
           format="avif"
           loading={"lazy"}
@@ -56,7 +65,7 @@ const breadcrumbURLs: BreadcrumbURLs = [
       </div>
       <div class="bg-yellow-500 p-5 rounded-2xl">
         <Image
-          src={BgPotrait}
+          src={images["/public/background_potrait.webp"]()}
           alt={"Fisika Komputasi"}
           class="rounded-xl hidden lg:block"
           transition:name="bg"

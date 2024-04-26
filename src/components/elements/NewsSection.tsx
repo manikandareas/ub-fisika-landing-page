@@ -1,7 +1,5 @@
-import { dummyNews } from "@/constants/layoutGrid";
-import { LayoutGrid } from "../ui/layout-grid";
-import { BentoGrid, BentoGridItem } from "../ui/bento-grid";
 import { items } from "@/constants/bentoGrid";
+import { BentoGrid, BentoGridItem } from "../ui/bento-grid";
 import PaginationSection from "./PaginationSection";
 
 type NewsSectionProps = {};

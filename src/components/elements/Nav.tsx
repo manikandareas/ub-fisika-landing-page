@@ -1,9 +1,8 @@
-import { ArrowRight, ChevronRight, Sidebar } from "lucide-react";
-import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
-import { NavigationBarMenu } from "./NavigationMenu";
-import { useStore } from "@nanostores/react";
 import { isSidebarOpen } from "@/store/SidebarStore";
+import { ChevronRight } from "lucide-react";
+import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
 import { ModeToggle } from "./ModeToggle";
+import { NavigationBarMenu } from "./NavigationMenu";
 
 type NavProps = {};
 
