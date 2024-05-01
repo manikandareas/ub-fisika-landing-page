@@ -17,13 +17,20 @@ const Sidebar: React.FC<SidebarProps> = () => {
   const $isSidebarOpen = useStore(isSidebarOpen);
   return (
     <SidebarFlowBite
+      theme={{
+        root: {
+          inner:
+            "h-screen overflow-y-auto overflow-x-hidden rounded bg-gray-50 px-3 py-4 dark:bg-background border-r",
+        },
+      }}
+      as={"aside"}
       className={cn(
-        "fixed top-0 left-0 h-screen z-20 transition-all ease-in-out  -translate-x-full",
+        "fixed top-0 left-0 h-screen z-20   transition-all ease-in-out  -translate-x-full",
         {
           "translate-x-0": $isSidebarOpen,
         }
       )}
-      aria-label="Sidebar with multi-level dropdown example"
+      aria-label="Sidebar"
     >
       <div className="flex py-1 justify-between mb-4 items-center">
         <div className="flex items-center gap-1.5">
@@ -34,7 +41,7 @@ const Sidebar: React.FC<SidebarProps> = () => {
           <ChevronLeft size={20} />
         </button>
       </div>
-      <SidebarFlowBite.Items className="">
+      <SidebarFlowBite.Items>
         <SidebarFlowBite.ItemGroup>
           <SidebarFlowBite.Item href="/" icon={Home}>
             Home
@@ -68,43 +75,3 @@ const Sidebar: React.FC<SidebarProps> = () => {
   );
 };
 export default Sidebar;
-
-// "use client";
-
-// import { Sidebar } from "flowbite-react";
-// import { HiArrowSmRight, HiChartPie, HiInbox, HiShoppingBag, HiTable, HiUser } from "react-icons/hi";
-
-// export function Component() {
-//   return (
-//     <Sidebar aria-label="Sidebar with multi-level dropdown example">
-//       <Sidebar.Items>
-//         <Sidebar.ItemGroup>
-//           <Sidebar.Item href="#" icon={HiChartPie}>
-//             Dashboard
-//           </Sidebar.Item>
-//           <Sidebar.Collapse icon={HiShoppingBag} label="E-commerce">
-//             <Sidebar.Item href="#">Products</Sidebar.Item>
-//             <Sidebar.Item href="#">Sales</Sidebar.Item>
-//             <Sidebar.Item href="#">Refunds</Sidebar.Item>
-//             <Sidebar.Item href="#">Shipping</Sidebar.Item>
-//           </Sidebar.Collapse>
-//           <Sidebar.Item href="#" icon={HiInbox}>
-//             Inbox
-//           </Sidebar.Item>
-//           <Sidebar.Item href="#" icon={HiUser}>
-//             Users
-//           </Sidebar.Item>
-//           <Sidebar.Item href="#" icon={HiShoppingBag}>
-//             Products
-//           </Sidebar.Item>
-//           <Sidebar.Item href="#" icon={HiArrowSmRight}>
-//             Sign In
-//           </Sidebar.Item>
-//           <Sidebar.Item href="#" icon={HiTable}>
-//             Sign Up
-//           </Sidebar.Item>
-//         </Sidebar.ItemGroup>
-//       </Sidebar.Items>
-//     </Sidebar>
-//   );
-// }
