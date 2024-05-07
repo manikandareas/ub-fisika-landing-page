@@ -33,17 +33,22 @@ const WelcomingSection: React.FC<WelcomingSectionProps> = () => {
         </span>
       </p>
       <div className="flex items-center space-x-1.5 w-fit">
-        <div className="flex space-x-1.5 items-center">
-          <IconBrandInstagram size={20} className="" />
-          <span className="text-xs text-muted-foreground">@manikandareas</span>
-        </div>
         <a
-          href="mailto:vitoandareas15@gmail"
+          href="https://instagram.com/fisikakomputasi_ub"
+          className="flex space-x-1.5 items-center"
+        >
+          <IconBrandInstagram size={20} className="" />
+          <span className="text-xs text-muted-foreground">
+            @fisikakomputasi_ub
+          </span>
+        </a>
+        <a
+          href="mailto:fisikaub@ub.ac.id"
           className="flex space-x-1.5 items-center "
         >
           <Mail size={20} />
           <span className="text-xs text-muted-foreground">
-            vitoandareas15@gmail.com
+            fisikaub@ub.ac.id
           </span>
         </a>
       </div>
